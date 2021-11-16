@@ -12,7 +12,7 @@ function imprimirMensagem(resposta){
   for(let i = 0; i < (mensagens.length); i++ ){
     if(mensagens[i].type === "message"){
       horaMensagem.innerHTML += `
-      <div class="mensagem mensagem-texto">
+      <div class="mensagem mensagem-texto" data-identifier="message">
         <p class="tempo"> ${mensagens[i].time} </p>
 
         <p class="mensagem-de"> ${mensagens[i].from} </p>
@@ -29,7 +29,7 @@ function imprimirMensagem(resposta){
 
     if(mensagens[i].type === "status"){
       horaMensagem.innerHTML += `
-      <div class="mensagem mensagem-status">
+      <div class="mensagem mensagem-status" data-identifier="message">
       <p class="tempo"> ${mensagens[i].time} </p>
 
       <p class="mensagem-de"> ${mensagens[i].from} </p>
@@ -42,7 +42,7 @@ function imprimirMensagem(resposta){
 
     if(mensagens[i].type === "private_message" && mensagens[i].to === SeuNome){
       horaMensagem.innerHTML += `
-    <div class="mensagem mensagem-privada">
+    <div class="mensagem mensagem-privada" data-identifier="message">
       <p class="tempo"> ${mensagens[i].time} </p>
 
       <p class="mensagem-de"> ${mensagens[i].from} </p>
